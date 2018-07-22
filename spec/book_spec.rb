@@ -7,27 +7,36 @@ describe Book do
       connection = PG.connect(dbname: 'Rate_My_Book_test')
 
 
-      Book.create(title: "Harry Potter")
-      Book.create(title: "Fifty SHades of Grey")
-      Book.create(title: "The Road to Little Dribbling")
+    book_1 =  Book.create(title: "Harry Potter")
+    book_2 =  Book.create(title: "Fifty SHades of Grey")
+    book_3 =  Book.create(title: "The Road to Little Dribbling")
 
 
       expected_books = [
-        'Harry Potter',
-        'Fifty SHades of Grey',
-        'The Road to Little Dribbling'
+        book_1,
+        book_2,
+        book_3
       ]
 
-      expect(Book.all).to eq expected_books
+  expect(Book.all).to eq expected_books
 
     end
   end
 
   describe '.create' do
-  it 'creates a new book' do
-    Book.create(title: 'Harry Potter')
-
-    expect(Book.all).to include 'Harry Potter'
+    it 'creates a new book' do
+      book_1 = Book.create(title: 'Harry Potter')
+      expect(Book.all).to include book_1
+    end
   end
-end
+
+  describe '#==' do
+    it 'two Books are equal if their IDs match' do
+      book_1 = Book.new(1, title: 'Harry Potter')
+      book_2 = Book.new(1, title: 'Harry Potter')
+
+      expect(book_1).to eq book_2
+    end
+  end
+
 end

@@ -1,13 +1,25 @@
 require 'book'
 
+
 describe Book do
   describe '.all' do
-    it 'returns all of the books in an array' do
-      array_of_books = Book.all
+    it 'returns all books in an array' do
+      connection = PG.connect(dbname: 'Rate_My_Book_test')
 
-      expect(array_of_books).to include("Harry Potter")
-      expect(array_of_books).to include("Fifty SHades of Grey")
-      expect(array_of_books).to include("The Road to Little Dribbling")
+
+      connection.exec("INSERT INTO books VALUES(1, 'Harry Potter');")
+      connection.exec("INSERT INTO books VALUES(2, 'Fifty SHades of Grey');")
+      connection.exec("INSERT INTO books VALUES(3, 'The Road to Little Dribbling');")
+
+
+      expected_books = [
+        'Harry Potter',
+        'Fifty SHades of Grey',
+        'The Road to Little Dribbling'
+      ]
+
+      expect(Book.all).to eq expected_books
+
     end
   end
 end

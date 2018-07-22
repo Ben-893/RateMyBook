@@ -1,7 +1,8 @@
 require 'sinatra/base'
 require 'sinatra/flash'
 require 'uri'
-require 'book.rb'
+require './lib/book.rb'
+
 
 class RateMyBook < Sinatra::Base
   register Sinatra::Flash
@@ -13,6 +14,14 @@ class RateMyBook < Sinatra::Base
     erb :index
   end
 
+  get '/books/new' do
+    erb :"books/new"
+  end
+
+  post '/books' do
+    Bookmark.create(title: params['title'])
+    redirect '/books'
+  end
 
 
 

@@ -22,4 +22,12 @@ describe Book do
 
     end
   end
+
+  describe '.create' do
+  it 'creates a new book' do
+    Book.create(title: 'Harry Potter')
+
+    expect(Book.all).to include 'Harry Potter'
+  end
+end
 end

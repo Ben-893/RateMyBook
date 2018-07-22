@@ -7,9 +7,9 @@ describe Book do
       connection = PG.connect(dbname: 'Rate_My_Book_test')
 
 
-      connection.exec("INSERT INTO books VALUES(1, 'Harry Potter');")
-      connection.exec("INSERT INTO books VALUES(2, 'Fifty SHades of Grey');")
-      connection.exec("INSERT INTO books VALUES(3, 'The Road to Little Dribbling');")
+      Book.create(title: "Harry Potter")
+      Book.create(title: "Fifty SHades of Grey")
+      Book.create(title: "The Road to Little Dribbling")
 
 
       expected_books = [

@@ -19,7 +19,12 @@ class RateMyBook < Sinatra::Base
   end
 
   post '/books' do
-    Bookmark.create(title: params['title'], author: params['author'])
+    Book.create(title: params['title'], author: params['author'])
+    redirect '/books'
+  end
+
+  post '/books/:id' do
+    Book.delete(params['id'])
     redirect '/books'
   end
 

@@ -39,4 +39,17 @@ describe Book do
     end
   end
 
+describe '.delete' do
+    it 'deletes a book' do
+      book =  Book.create(title: 'Harry Potter', author: "J.K. Rowling")
+      Book.delete(book.id)
+      books = Book.all
+      titles = books.map(&:title)
+
+    expect(titles).not_to include "Harry Potter"
+  end
+end
+
+
+
 end

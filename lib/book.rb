@@ -30,6 +30,11 @@ class Book
   end
 
 
+  def self.delete(id)
+    @connection.exec("DELETE FROM books WHERE id = #{id}")
+  end
+
+
 
   private
 
@@ -38,8 +43,6 @@ class Book
       @connection = PG.connect(dbname: 'Rate_My_Book_test')
     else
       @connection = PG.connect(dbname: 'Rate_My_Book')
-      result = @connection.exec("INSERT INTO books (title) VALUES('#{options[:title]}', '#{options[:author]}') RETURNING id, title, author")
-    Book.new(result.first['id'], result.first['title'], book['author'])
     end
   end
 end

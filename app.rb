@@ -18,7 +18,7 @@ class RateMyBook < Sinatra::Base
   end
 
   post '/books' do
-    Book.create(title: params['title'], author: params['author'])
+    Book.create(title: params['title'], author: params['author'], rating: params['rating'] )
     redirect '/books'
   end
 
@@ -33,7 +33,7 @@ class RateMyBook < Sinatra::Base
   end
 
   patch '/books/:id' do
-    Book.update(params['id'], params['title'], params['author'])
+    Book.update(params['id'], params['title'], params['author'], params['rating'] )
     redirect('/books')
   end
 

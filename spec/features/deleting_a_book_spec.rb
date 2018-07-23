@@ -1,6 +1,6 @@
 feature 'Deleting a book' do
   scenario 'A user can delete a book' do
-    book = Book.create(title: 'Harry Potter', author: "J.K. Rowling")
+    book = Book.create(title: 'Harry Potter', author: "J.K. Rowling", rating: 4)
     visit('/books')
 
     within "#book-#{book.id}" do

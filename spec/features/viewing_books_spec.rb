@@ -6,9 +6,9 @@ feature 'Viewing books' do
   connection = PG.connect(dbname: 'Rate_My_Book_test')
 
 
-    Book.create(title: "Harry Potter", author: "J.K. Rowling")
-    Book.create(title: "Fifty SHades of Grey", author: "J.K. Rowling")
-    Book.create(title: "The Road to Little Dribbling", author: "J.K. Rowling")
+    Book.create(title: "Harry Potter", author: "J.K. Rowling", rating: 4)
+    Book.create(title: "Fifty SHades of Grey", author: "J.K. Rowling", rating: 4)
+    Book.create(title: "The Road to Little Dribbling", author: "J.K. Rowling", rating: 4)
 
 
     visit('/books')
@@ -17,6 +17,8 @@ feature 'Viewing books' do
     expect(page).to have_content "Fifty SHades of Grey"
     expect(page).to have_content "The Road to Little Dribbling"
     expect(page).to have_content "J.K. Rowling"
+    expect(page).to have_content 4
+
 
   end
 end

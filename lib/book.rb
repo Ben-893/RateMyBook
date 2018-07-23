@@ -34,7 +34,16 @@ class Book
     @connection.exec("DELETE FROM books WHERE id = #{id}")
   end
 
+  def self.update(id, title, author)
+    Book.switch_database
+    @connection.exec("UPDATE books SET title ='#{title}', author ='#{author}' WHERE id ='#{id}' RETURNING id, title, author;")
+  end
 
+  def self.find(id)
+    Book.switch_database
+    result = @connection.exec("SELECT * FROM books WHERE id = #{id}")
+    result.map { |book| Book.new(book['id'], book['title'], book['author']) }.first
+  end
 
   private
 

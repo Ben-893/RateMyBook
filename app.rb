@@ -1,13 +1,12 @@
 require 'sinatra/base'
 require 'sinatra/flash'
 require 'uri'
-require './lib/book.rb'
-
+require './lib/book'
 
 class RateMyBook < Sinatra::Base
   register Sinatra::Flash
+  set :method_override, true
   enable :sessions
-
 
   get '/books' do
     @books = Book.all
@@ -23,9 +22,19 @@ class RateMyBook < Sinatra::Base
     redirect '/books'
   end
 
-  post '/books/:id' do
+  delete '/books/:id' do
     Book.delete(params['id'])
     redirect '/books'
+  end
+
+  get '/books/:id/edit' do
+    @book = Book.find(params['id'])
+    erb :"books/edit"
+  end
+
+  patch '/books/:id' do
+    Book.update(params['id'], params['title'], params['author'])
+    redirect('/books')
   end
 
 

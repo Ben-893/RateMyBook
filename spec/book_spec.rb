@@ -50,6 +50,20 @@ describe '.delete' do
   end
 end
 
+describe '.update' do
+    it 'updates a book' do
+      book = Book.create(title: "Harry Potter", author: 'J.K Rowling')
+      Book.update(book.id, 'Something else', 'Another author')
 
+      books = Book.all
+      titles = books.map(&:title)
+      authors = books.map(&:author)
+
+      expect(titles).not_to include "Harry Potter"
+      expect(authors).not_to include "J.K Rowling"
+      expect(titles).to include "Something else"
+      expect(authors).to include "Another author"
+    end
+  end
 
 end

@@ -2,6 +2,7 @@ require 'sinatra/base'
 require 'sinatra/flash'
 require 'uri'
 require './lib/book'
+require './lib/user'
 
 class RateMyBook < Sinatra::Base
   register Sinatra::Flash
@@ -9,6 +10,7 @@ class RateMyBook < Sinatra::Base
   enable :sessions
 
   get '/books' do
+    @user = User.find(session[:user_id])
     @books = Book.all
     erb :index
   end
@@ -34,6 +36,16 @@ class RateMyBook < Sinatra::Base
 
   patch '/books/:id' do
     Book.update(params['id'], params['title'], params['author'], params['rating'] )
+    redirect('/books')
+  end
+
+  get '/users/new' do
+    erb :"users/new"
+  end
+
+  post '/users' do
+    user = User.create(email: params['email'], password: params['password'])
+    session[:user_id] = user.id
     redirect('/books')
   end
 

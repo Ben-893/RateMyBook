@@ -8,5 +8,6 @@ def setup_test_database!
 
 
   connection.exec("TRUNCATE books;")
+  connection.exec("TRUNCATE users;")
 
 end

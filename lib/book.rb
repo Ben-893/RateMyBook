@@ -37,7 +37,7 @@ class Book
 
   def self.update(id, title, author, rating)
     Book.switch_database
-@connection.exec("UPDATE books SET title ='#{title}', author ='#{author}', rating ='#{rating}' WHERE id ='#{id}' RETURNING id, title, author, rating;")
+    @connection.exec("UPDATE books SET title ='#{title}', author ='#{author}', rating ='#{rating}' WHERE id ='#{id}' RETURNING id, title, author, rating;")
   end
 
   def self.find(id)

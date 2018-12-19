@@ -21,8 +21,12 @@ class RateMyBook < Sinatra::Base
 
   get '/books' do
     @user = User.find(session[:user_id])
-    @books = Book.all
-    erb :index
+    if @user
+      @books = Book.all
+      erb :index
+    else
+      redirect '/users/new'
+    end
   end
 
   get '/books/new' do

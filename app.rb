@@ -5,9 +5,19 @@ require './lib/book'
 require './lib/user'
 
 class RateMyBook < Sinatra::Base
+  set :public_folder, proc { File.join(root, 'public') }
   register Sinatra::Flash
   set :method_override, true
   enable :sessions
+
+  get '/' do
+    @user = User.find(session[:user_id])
+    if @user
+      redirect '/books'
+    else
+      redirect 'users/new'
+    end
+  end
 
   get '/books' do
     @user = User.find(session[:user_id])
@@ -47,6 +57,11 @@ class RateMyBook < Sinatra::Base
     user = User.create(email: params['email'], password: params['password'])
     session[:user_id] = user.id
     redirect('/books')
+  end
+
+  get '/logout' do
+    session.clear
+    redirect '/'
   end
 
 

@@ -4,7 +4,7 @@ class Book
   attr_reader :id, :title, :author, :rating
 
   def initialize(id, title, author, rating)
-    @id  = id
+    @id = id
     @author = author
     @title = title
     @rating = rating.to_i

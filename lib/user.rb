@@ -1,4 +1,5 @@
 require 'bcrypt'
+require'pry'
 
 class User
   attr_reader :id, :email, :password
@@ -29,7 +30,13 @@ class User
     User.new(result[0]['id'], result[0]['email'], result[0]['password'])
   end
 
-
+  def self.authenticate(email:, password:)
+    User.switch_database
+    result = @connection.exec("SELECT * FROM users WHERE email = '#{email}'")
+    return unless result.any?
+    return unless BCrypt::Password.new(result[0]['password']) == password
+    User.new(result[0]['id'], result[0]['email'], result[0]['password'])
+  end
 
   private
 

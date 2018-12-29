@@ -74,8 +74,14 @@ class RateMyBook < Sinatra::Base
 
   post '/sessions' do
     user = User.authenticate(email: params[:email], password: params[:password])
-    session[:user_id] = user.id
-    redirect('/bookmarks')
+
+    if user
+      session[:user_id] = user.id
+      redirect('/books')
+    else
+      flash[:notice] = 'Please check your email or password.'
+      redirect('/sessions/new')
+    end
   end
 
     run! if app_file == $0

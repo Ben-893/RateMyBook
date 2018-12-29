@@ -1,6 +1,7 @@
 feature 'Adding a new book' do
   scenario 'A user can add a new book to the list of Books' do
-    visit('/')
+    visit('/books')
+    click_link('Sign up')
     fill_in('email', with: 'test@example.com')
     fill_in('password', with: 'password123')
     click_button('Submit')

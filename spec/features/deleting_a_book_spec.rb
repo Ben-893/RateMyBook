@@ -2,6 +2,7 @@ feature 'Deleting a book' do
   scenario 'A user can delete a book' do
     book = Book.create(title: 'Harry Potter', author: "J.K. Rowling", rating: 4)
     visit('/books')
+    click_link('Sign up')
     fill_in('email', with: 'test@example.com')
     fill_in('password', with: 'password123')
     click_button('Submit')

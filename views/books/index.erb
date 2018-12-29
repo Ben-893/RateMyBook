@@ -1,0 +1,20 @@
+<% if @user %>
+  <h1>Welcome, <%= @user.email %></h1>
+<% end %>
+
+<a class="btn btn-warning" href="/books/new">Add</a>
+<ul>
+  <% @books.each do |book| %>
+    <li id="book-<%= book.id %>"> 
+    <p> Book: <%= book.title %> </p>
+    <p> Author: <%= book.author %> </p>
+    <p> Raiting: <%= book.rating %> </p>
+      <a class="btn btn-primary" href="/books/<%= book.id %>/edit">Edit</a>
+      <form action="/books/<%= book.id %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="id" value="<%= book.id %>">
+        <input class="btn btn-danger" type="submit" value="Delete" />
+      </form>
+    </li>
+  <% end %>
+</ul>

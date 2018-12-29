@@ -15,7 +15,7 @@ class RateMyBook < Sinatra::Base
     if @user
       redirect '/books'
     else
-      redirect 'users/new'
+      erb :index
     end
   end
 
@@ -23,9 +23,9 @@ class RateMyBook < Sinatra::Base
     @user = User.find(session[:user_id])
     if @user
       @books = Book.all
-      erb :index
+      erb :"books/index"
     else
-      redirect '/users/new'
+      redirect '/'
     end
   end
 

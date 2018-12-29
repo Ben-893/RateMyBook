@@ -59,8 +59,13 @@ class RateMyBook < Sinatra::Base
 
   post '/users' do
     user = User.create(email: params['email'], password: params['password'])
-    session[:user_id] = user.id
-    redirect('/books')
+    if user
+      session[:user_id] = user.id
+      redirect('/books')
+    else
+      flash[:notice] = 'This user already exists.'
+      redirect('/users/new')
+    end
   end
 
   get '/logout' do

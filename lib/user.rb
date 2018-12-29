@@ -18,6 +18,8 @@ class User
 
   def self.create(options)
     User.switch_database
+    result = @connection.exec("SELECT * FROM users WHERE (email) = '#{options[:email]}'")
+    return if result.any?
     password = BCrypt::Password.create(options[:password])
     result = @connection.exec("INSERT INTO users (email, password) VALUES('#{options[:email]}', '#{password}') RETURNING id, email")
     User.new(result[0]['id'], result[0]['email'], result[0]['password'])

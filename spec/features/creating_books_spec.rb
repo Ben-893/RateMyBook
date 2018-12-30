@@ -10,7 +10,6 @@ feature 'Adding a new book' do
     fill_in('author', with: 'J.K. Rowling')
     fill_in('rating', with: 4)
     click_button('Submit')
-
     expect(page).to have_content 'Harry Potter'
     expect(page).to have_content 'J.K. Rowling'
     expect(page).to have_content 4

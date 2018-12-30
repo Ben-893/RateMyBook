@@ -6,11 +6,9 @@ feature 'Deleting a book' do
     fill_in('email', with: 'test@example.com')
     fill_in('password', with: 'password123')
     click_button('Submit')
-
     within "#book-#{book.id}" do
       click_button 'Delete'
     end
-
     expect(current_path).to eq '/books'
     expect(page).not_to have_content 'Harry Potter'
   end

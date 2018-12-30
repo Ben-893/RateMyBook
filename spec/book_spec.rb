@@ -7,9 +7,9 @@ describe Book do
       connection = PG.connect(dbname: 'Rate_My_Book_test')
 
 
-    book_1 =  Book.create(title: "Harry Potter", author: "J.K. Rowling", rating: 4)
-    book_2 =  Book.create(title: "Fifty SHades of Grey", author: "J.K. Rowling", rating: 4)
-    book_3 =  Book.create(title: "The Road to Little Dribbling", author: "J.K. Rowling", rating: 4)
+      book_1 =  Book.create(title: "Harry Potter", author: "J.K. Rowling", rating: 4)
+      book_2 =  Book.create(title: "Fifty SHades of Grey", author: "J.K. Rowling", rating: 4)
+      book_3 =  Book.create(title: "The Road to Little Dribbling", author: "J.K. Rowling", rating: 4)
 
 
       expected_books = [
@@ -18,7 +18,7 @@ describe Book do
         book_3
       ]
 
-  expect(Book.all).to eq expected_books
+      expect(Book.all).to eq expected_books
 
     end
   end
@@ -39,18 +39,18 @@ describe Book do
     end
   end
 
-describe '.delete' do
+  describe '.delete' do
     it 'deletes a book' do
       book =  Book.create(title: 'Harry Potter', author: "J.K. Rowling" , rating: 4)
       Book.delete(book.id)
       books = Book.all
       titles = books.map(&:title)
 
-    expect(titles).not_to include "Harry Potter"
+      expect(titles).not_to include "Harry Potter"
+    end
   end
-end
 
-describe '.update' do
+  describe '.update' do
     it 'updates a book' do
       book = Book.create(title: "Harry Potter", author: 'J.K Rowling', rating: 4)
       Book.update(book.id, 'Something else', 'Another author', 2)

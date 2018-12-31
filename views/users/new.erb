@@ -1,10 +1,14 @@
-<h2>
-  <%= flash[:notice] %>
-</h2>
+<div class="flash"> 
+  <p>
+    <%= flash[:notice] %>
+  </p>
+</div>
 
-<h1>Welcome to Rate My Book</h1>
+<div class="cardbox">
+<h1>Welcome to Rate My Book.</h1>
 <form action="/users" method="post">
   <input type="email" name="email" placeholder="email"/>
   <input type="password" name="password" placeholder="password" />
-  <input class="btn btn-primary" type="submit" value="Submit" />
+  <input class="btn btn-primary submit" type="submit" value="Submit" />
 </form>
+</div>

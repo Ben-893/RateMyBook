@@ -30,6 +30,7 @@ class RateMyBook < Sinatra::Base
   end
 
   get '/books/new' do
+    @user = User.find(session[:user_id])
     erb :"books/new"
   end
 
@@ -44,6 +45,7 @@ class RateMyBook < Sinatra::Base
   end
 
   get '/books/:id/edit' do
+    @user = User.find(session[:user_id])
     @book = Book.find(params['id'])
     erb :"books/edit"
   end
@@ -84,7 +86,7 @@ class RateMyBook < Sinatra::Base
       session[:user_id] = user.id
       redirect('/books')
     else
-      flash[:notice] = 'Please check your email or password.'
+      flash[:notice] = 'Incorrect email or password combination. Please check your email or password and try again'
       redirect('/sessions/new')
     end
   end

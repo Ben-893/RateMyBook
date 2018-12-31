@@ -1,20 +1,23 @@
 <% if @user %>
-  <h1>Welcome, <%= @user.email %></h1>
+  <h1 style="text-align: center; margin-top: 20px;">Welcome, <%= @user.email %></h1>
 <% end %>
 
-<a class="btn btn-warning" href="/books/new">Add</a>
+<a class="btn btn-warning add-button" href="/books/new">Add a new book</a>
 <ul>
+
   <% @books.each do |book| %>
-    <li id="book-<%= book.id %>"> 
-    <p> Book: <%= book.title %> </p>
-    <p> Author: <%= book.author %> </p>
-    <p> Raiting: <%= book.rating %> </p>
-      <a class="btn btn-primary" href="/books/<%= book.id %>/edit">Edit</a>
-      <form action="/books/<%= book.id %>" method="post">
-        <input type="hidden" name="_method" value="delete">
-        <input type="hidden" name="id" value="<%= book.id %>">
-        <input class="btn btn-danger" type="submit" value="Delete" />
-      </form>
-    </li>
+    <div class="cardbox">
+      <li id="book-<%= book.id %>"> 
+      <p><strong>Book:</strong> <%= book.title %> </p>
+      <p><strong>Author:</strong> <%= book.author %> </p>
+      <p><strong>Rating:</strong> <%= book.rating %> </p>
+        <a class="btn btn-primary" style="display: block; margin-top: 2px;" href="/books/<%= book.id %>/edit">Edit</a>
+        <form action="/books/<%= book.id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <input type="hidden" name="id" value="<%= book.id %>">
+          <input class="btn btn-danger" style="display: block; margin-top: 2px; width: 100%;" type="submit" value="Delete" />
+        </form>
+      </li>
+    </div>
   <% end %>
 </ul>

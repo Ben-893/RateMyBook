@@ -1,3 +1,43 @@
+body {
+  background-color: lightgrey;
+}
+
 ul {
   list-style-type: none;
+}
+
+.navigation {
+  background-color: white;
+  height: 50px;
+  padding: 5px;
+}
+
+.buttons {
+  float: right;
+}
+
+.cardbox {
+  background-color: white;
+  margin: 0 auto;
+  width: 50%;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.submit {
+  margin-top: 15px;
+}
+
+.add-button {
+  margin: 0 auto;
+  display: block;
+  width: 25%;
+}
+
+.flash {
+  color: red;
+  text-align: center;
+  margin-top: 40px;
 }

@@ -3,6 +3,12 @@ require_relative './setup_test_database'
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
+require 'simplecov'
+require 'simplecov-console'
+
+SimpleCov.formatter = SimpleCov::Formatter::Console
+
+SimpleCov.start
 
 
 

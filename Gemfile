@@ -10,3 +10,5 @@ gem 'sinatra-flash'
 gem 'bcrypt'
 gem 'pry'
 gem 'pry-nav'
+gem 'simplecov', require: false, group: :test
+gem 'simplecov-console', require: false

@@ -1,6 +1,17 @@
 # RateMyBook
 
-This is a web application that stores a list of books I like, and allows me to rate them.
+This is a web application that stores a list of books I like, and allows me to rate, edit and delete them.
+
+## To Setup
+```
+git clone https://github.com/Ben-893/RateMyBook.git && cd RateMyBook
+bundle
+```
+
+## To run
+```
+rackup
+```
 
 # Specifications
 

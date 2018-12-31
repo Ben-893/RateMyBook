@@ -13,6 +13,10 @@ bundle
 rackup
 ```
 
+Visit the site at http://localhost:9292
+
+![alt text](Screenshot%202018-12-31%20at%2014.23.33.png)
+
 # Specifications
 
 I can visit RateMyBook which asks me to sign up or log in.

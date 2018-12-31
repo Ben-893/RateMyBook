@@ -1,5 +1,7 @@
 # RateMyBook
 
+<a href="https://codeclimate.com/github/Ben-893/RateMyBook/maintainability"><img src="https://api.codeclimate.com/v1/badges/5cb1adcbfc397e561c4a/maintainability" /></a>
+
 This is a web application that stores a list of books I like, and allows me to rate, edit and delete them.
 
 ## To Setup

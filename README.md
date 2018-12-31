@@ -31,4 +31,4 @@ I can add one of my books with a title, author, and my rating.
 
 I can update the rating or title or author of one of my books.
 
-I can remove also remove a book.
+I can remove a book.

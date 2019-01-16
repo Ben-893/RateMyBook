@@ -9,6 +9,10 @@ This is a web application that stores a list of books I like, and allows me to r
 git clone https://github.com/Ben-893/RateMyBook.git && cd RateMyBook
 bundle
 ```
+## To Setup Local Database
+```
+
+```
 
 ## To run
 ```

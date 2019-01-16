@@ -11,15 +11,19 @@ bundle
 ```
 ## To Setup Local Database
 ```
-
+$ psql
+$ CREATE DATABASE Rate_My_Book_test
+$ CREATE DATABASE Rate_My_Book
+$ \q
 ```
 
 ## To run
 ```
 rackup
+visit the site at http://localhost:9292
 ```
 
-Visit the site at http://localhost:9292
+
 
 ![alt text](Screenshot%202018-12-31%20at%2014.23.33.png)
 

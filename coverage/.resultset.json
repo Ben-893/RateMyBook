@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/ben.smith.gordon/Projects/RateMyBook/spec/book_spec.rb": [
+      "/Users/ben.smith.gordon/Desktop/RateMyBook/spec/book_spec.rb": [
         1,
         null,
         null,
@@ -75,7 +75,7 @@
         null,
         null
       ],
-      "/Users/ben.smith.gordon/Projects/RateMyBook/spec/features/authentication_spec.rb": [
+      "/Users/ben.smith.gordon/Desktop/RateMyBook/spec/features/authentication_spec.rb": [
         1,
         1,
         1,
@@ -113,13 +113,7 @@
         null,
         null
       ],
-      "/Users/ben.smith.gordon/Projects/RateMyBook/spec/features/creating_books_spec.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
+      "/Users/ben.smith.gordon/Desktop/RateMyBook/spec/features/creating_books_spec.rb": [
         1,
         1,
         1,
@@ -134,14 +128,8 @@
         null,
         null
       ],
-      "/Users/ben.smith.gordon/Projects/RateMyBook/spec/features/deleting_a_book_spec.rb": [
+      "/Users/ben.smith.gordon/Desktop/RateMyBook/spec/features/deleting_a_book_spec.rb": [
         1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
         1,
         1,
         1,
@@ -153,20 +141,13 @@
         null,
         null
       ],
-      "/Users/ben.smith.gordon/Projects/RateMyBook/spec/features/registration_spec.rb": [
-        1,
-        1,
+      "/Users/ben.smith.gordon/Desktop/RateMyBook/spec/features/registration_spec.rb": [
         1,
         1,
         1,
         1,
         null,
-        1,
         null,
-        null,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -174,13 +155,7 @@
         null,
         null
       ],
-      "/Users/ben.smith.gordon/Projects/RateMyBook/spec/features/updating_a_bookmark_spec.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
+      "/Users/ben.smith.gordon/Desktop/RateMyBook/spec/features/updating_a_bookmark_spec.rb": [
         1,
         1,
         1,
@@ -202,18 +177,12 @@
         null,
         null
       ],
-      "/Users/ben.smith.gordon/Projects/RateMyBook/spec/features/viewing_books_spec.rb": [
+      "/Users/ben.smith.gordon/Desktop/RateMyBook/spec/features/viewing_books_spec.rb": [
         1,
         1,
         1,
         1,
         1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
         1,
         1,
         1,
@@ -225,7 +194,7 @@
         null,
         null
       ],
-      "/Users/ben.smith.gordon/Projects/RateMyBook/spec/user_spec.rb": [
+      "/Users/ben.smith.gordon/Desktop/RateMyBook/spec/user_spec.rb": [
         1,
         1,
         1,
@@ -279,6 +248,6 @@
         null
       ]
     },
-    "timestamp": 1546267502
+    "timestamp": 1547673734
   }
 }

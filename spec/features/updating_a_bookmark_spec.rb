@@ -1,12 +1,6 @@
 feature 'Updating a book' do
   scenario 'A user can update a book' do
-    visit('/')
-    within ".navigation" do
-      click_link('Sign up')
-    end
-    fill_in('email', with: 'test@example.com')
-    fill_in('password', with: 'password123')
-    click_button('Submit')
+    sign_up
     visit('/books/new')
     fill_in('title', with: "Winnie the Pooh")
     fill_in('author', with: "A.A Milne")
